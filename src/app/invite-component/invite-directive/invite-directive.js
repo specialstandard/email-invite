@@ -22,6 +22,13 @@ export default class InviteDirective {
 // Directive's controller
 class InviteDirectiveController {
     constructor () {
-        this.name = 'brian';
+        this.showModal = false;
+        this.onClickRequest = () => {
+            console.log('pushed')
+            this.showModal = true;
+        }
+        this.onClickCloseModal = () => {
+            this.showModal = false;
+        }
     }
 }

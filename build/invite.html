@@ -6,9 +6,27 @@
 
   <section class="main" >
     <h1>A better way to enjoy every day</h1>
-    <h4>Be the first to know when we launch.</h4>
-    <button ng-click="onClickRequest()">Request an Invite</button>
+    <h6>Be the first to know when we launch.</h6>
+    <button ng-click="ctrl.onClickRequest()">Request an Invite</button>
+
+    <div class = "modal" ng-if="ctrl.showModal">
+      <div class = "modal-inner">
+        <div class = "modal-header">
+          <div class="modal-header-element">Request an Invite</div>
+          <div class = "modal-header-element close-btn"><i class="fa fa-times" ng-click="ctrl.onClickCloseModal()"></i></div>
+        </div>
+        <form name = "requestForm" novalidate>
+          <input type = "text"><br>
+          <input type = "email"><br>
+          <input type = "email"><br>
+          <button>Send</button>
+        </form>
+      </div>
+    </div>
+
   </section>
+
+
 
   <footer>
     <i>Made with <i class="fa fa-heart"></i> in Melbourne.<br>
