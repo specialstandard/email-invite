@@ -22,8 +22,9 @@
             <input type = "text" ng-model="ctrl.user.name" name ="userName" pattern=".{3,}" required><br>
             <input type = "email" ng-model="ctrl.user.email" name="userEmail" required><br>
             <input type = "email" ng-model="ctrl.user.emailConf" name="userEmailConf" required><br>
-            <button ng-click="ctrl.onClickSend()" >Send</button>
+            <button class="btn-send" ng-click="ctrl.onClickSend()" >Send</button><br>
           </form>
+          <div class="message" ng-if="ctrl.message.length > 0"><i>{{ctrl.message}}</i></div>
         </div>
 
         <div ng-if="ctrl.requestProcessing">

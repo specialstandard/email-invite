@@ -31,23 +31,24 @@ section.main {
 }
 
 .modal {
+  @include shadow();
   text-align: center;
   background-color: #fff;
   opacity: 1;
   position: absolute;
   top: 18%;
   left: 23%;
-  height: 10em;
+  height: 12em;
   width: 13em;
   z-index: 10;
   border: 1px solid #444;
-  border-radius: .4em;
+  border-radius: .2em;
 }
 
 .modal-header{
   display: flex;
-  padding-top: .2em;
-  padding-left: .2em;
+  padding-top: .3em;
+  padding-left: 2.2em;
   margin-bottom: 1em;
   padding-bottom: 1em;
   position: relative;
@@ -58,4 +59,21 @@ section.main {
 }
 .ng-submitted input.ng-invalid {
     background-color: pink;
+}
+.message {
+  font-size: .6em;
+  margin-top: .2em;
+  color: #7d1e2f;
+}
+input {
+  padding: .2em .1em;
+  margin-bottom: .5em;
+  border: 1px solid black;
+}
+.btn-send{
+  width: 12.7em;
+  margin-top:.3em;
+}
+button {
+  border-radius: .2em;
 }

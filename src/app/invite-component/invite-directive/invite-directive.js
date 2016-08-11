@@ -27,6 +27,7 @@ class InviteDirectiveController {
         this.showRequestModal = false;
         this.showSuccessModal = false;
         this.requestProcessing = false;
+        this.message = ''
         this.user = {
             name:'',
             email:'',
@@ -49,7 +50,7 @@ class InviteDirectiveController {
         }
         this.onClickSend = () => {
             let self = this;
-
+            this.message = ''
             console.log('clicked send')
             let bValid = true
             if ( self.user.name.length < 3 ){
@@ -86,11 +87,12 @@ class InviteDirectiveController {
                         this.requestProcessing = false
                     }
                 })
-                .failure((response, status) =>{
+                .error((response, status) =>{
 
                     console.log('response: ', response )
                     console.log('status: ', status )
                     this.requestProcessing = false
+                    this.message = response.errorMessage
 
                 })
             }
