@@ -1,0 +1,18 @@
+{
+  "name": "email-invite",
+  "version": "1.0.0",
+  "description": "email-invite",
+  "scripts": {
+    "build": "webpack"
+  },
+  "author": "Brian Ardito",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^5.8.33",
+    "babel-loader": "^5.3.3",
+    "webpack": "^1.12.2"
+  },
+  "dependencies": {
+    "angular": "^1.4.7"
+  }
+}
