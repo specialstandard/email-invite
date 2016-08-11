@@ -56,3 +56,6 @@ section.main {
   position: absolute;
   right: .5em;
 }
+.ng-submitted input.ng-invalid {
+    background-color: pink;
+}
