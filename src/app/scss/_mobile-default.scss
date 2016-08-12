@@ -1,7 +1,14 @@
 * {
   box-sizing: border-box;
   font-family: sans-serif;
-  transition: all 1s;
+  transition: all .2s;
+}
+h1{
+  font-size: 2em;
+}
+h6{
+  font-size: 1em;
+  font-weight: normal;
 }
 header {
   position: fixed;
@@ -65,6 +72,7 @@ section.main {
 .close-btn{
   position: absolute;
   right: .5em;
+  cursor: pointer;
 }
 .ng-submitted input.ng-invalid {
     background-color: pink;
@@ -80,7 +88,7 @@ input {
   border: 1px solid black;
 }
 .btn-submit{
-  width: 12.7em;
+  width: 9.7em;
   margin-top:.3em;
 }
 button {
@@ -89,7 +97,15 @@ button {
   border: 1px solid #000;
   cursor: pointer;
   min-height: 2em;
+  font-size: 1em;
+
+  &:hover{
+    background-color: #0b0ef5;
+    color: #fff;
+  }
+
 }
+
 .divider {
   @include modalMiddleLeftDivider()
   position: absolute;

@@ -1,5 +1,12 @@
 @import '_variables';
+
 @import '_mobile-default';
-@import '_tablet';
-@import '_desktop';
+
+@media only screen and (min-width: 720px){
+  @import '_tablet';
+}
+@media only screen and (min-width: 1028px) {
+  @import '_desktop';
+}
+
 @import "../font-awesome-4.6.3/scss/font-awesome";
