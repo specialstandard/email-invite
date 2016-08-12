@@ -1,6 +1,6 @@
 export default class InviteDirective {
     constructor() {
-        this.templateUrl = 'invite.html';
+        this.template = require("./invite.html");
         this.restrict = 'E';
         this.scope = {};
         this.controller = InviteDirectiveController;
