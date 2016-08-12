@@ -22,7 +22,7 @@ export default class InviteDirective {
 // Directive's controller
 class InviteDirectiveController {
     constructor (apiService, $timeout, $http, $q) {
-        //this.apiService = apiService;
+        this.apiService = apiService;
         this.$http = $http
         this.showRequestModal = false;
         this.showSuccessModal = false;
@@ -47,6 +47,21 @@ class InviteDirectiveController {
         this.onClickCloseSuccessModal = () => {
             this.showSuccessModal = false;
 
+        }
+        this.fnOnSuccess = ( response, status ) => {
+            console.log('response: ', response )
+            console.log('status: ', status )
+            if ( status === 200 ){
+                this.showRequestModal = false;
+                this.showSuccessModal = true;
+                this.requestProcessing = false
+            }
+        }
+        this.fnOnFailure = ( response, status ) => {
+            console.log('response: ', response )
+            console.log('status: ', status )
+            this.requestProcessing = false
+            this.message = response.errorMessage
         }
         this.onClickSend = () => {
             let self = this;
@@ -77,6 +92,8 @@ class InviteDirectiveController {
 
                 this.data = JSON.stringify( this.data );
                 const url = "https://l94wc2001h.execute-api.ap-southeast-2.amazonaws.com/prod/fake-auth";
+                this.apiService.postData( this.data, this.fnOnSuccess, this.fnOnFailure )
+                /*
                 this.$http.post( url , this.data).success((response, status) =>{
 
                     console.log('response: ', response )
@@ -95,6 +112,7 @@ class InviteDirectiveController {
                     this.message = response.errorMessage
 
                 })
+                */
             }
         }
     }

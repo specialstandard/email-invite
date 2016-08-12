@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
   font-family: sans-serif;
+  transition: all 1s;
 }
 header {
   position: fixed;
@@ -33,7 +34,7 @@ section.main {
 
 .modal {
   @include shadow();
-  @include modalMiddleLeft()
+  @include modalMiddleLeftHeader()
   text-align: center;
   background-color: #fff;
   opacity: 1;
@@ -88,4 +89,12 @@ button {
   border: 1px solid #000;
   cursor: pointer;
   min-height: 2em;
+}
+.divider {
+  @include modalMiddleLeftDivider()
+  position: absolute;
+  top: 1em;
+  width: 1.5em;
+  height: 1em;
+  border-bottom: 1px solid #222;
 }

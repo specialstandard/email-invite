@@ -4,8 +4,14 @@
   box-shadow:         1px 1px 2px 2px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 }
 
-@mixin modalMiddleLeft(){
+@mixin modalMiddleLeftHeader(){
   left:-webkit-calc(50% - 6.5em);
   left:-moz-calc(50% - 6.5em);
   left:calc(50% - 6.5em);
+}
+
+@mixin modalMiddleLeftDivider(){
+  left:-webkit-calc(50% - .75em);
+  left:-moz-calc(50% - .75em);
+  left:calc(50% - .75em);
 }
