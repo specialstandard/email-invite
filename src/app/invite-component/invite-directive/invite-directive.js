@@ -8,15 +8,6 @@ export default class InviteDirective {
         this.bindToController = true;
     }
 
-    // Directive compile function
-    compile() {
-
-    }
-
-    // Directive link function
-    link() {
-
-    }
 }
 
 // Directive's controller
@@ -33,9 +24,9 @@ class InviteDirectiveController {
             email:'',
             emalConf: ''
         }
-        this.apiObj = {
-            response:'',
-            status:''
+        this.validateEmail = (email) => {
+            const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
         }
         this.onClickRequest = () => {
             console.log('pushed')
@@ -68,16 +59,18 @@ class InviteDirectiveController {
             this.message = ''
             console.log('clicked send')
             let bValid = true
-            if ( self.user.name.length < 3 ){
+            if ( this.user.name === undefined){
                 bValid = false
-            } else if ( self.requestForm.userEmail.$invalid ){
+            } else if ( this.user.name.length < 3 ){
                 bValid = false
-            } else if ( self.requestForm.userEmailConf.$invalid ){
+            } else if ( this.validateEmail( this.user.email ) === false ){
+                bValid = false
+            } else if ( this.validateEmail( this.user.emailConf ) === false ){
                 bValid = false
             } else if ( self.user.email !== self.user.emailConf ){
                 bValid = false
             }
-
+            console.log('bValid: ',bValid)
             if ( bValid ){
                 //$timeout(()=>{
                     this.requestProcessing = true
@@ -93,26 +86,7 @@ class InviteDirectiveController {
                 this.data = JSON.stringify( this.data );
                 const url = "https://l94wc2001h.execute-api.ap-southeast-2.amazonaws.com/prod/fake-auth";
                 this.apiService.postData( this.data, this.fnOnSuccess, this.fnOnFailure )
-                /*
-                this.$http.post( url , this.data).success((response, status) =>{
 
-                    console.log('response: ', response )
-                    console.log('status: ', status )
-                    if ( status === 200 ){
-                        self.showRequestModal = false;
-                        self.showSuccessModal = true;
-                        this.requestProcessing = false
-                    }
-                })
-                .error((response, status) =>{
-
-                    console.log('response: ', response )
-                    console.log('status: ', status )
-                    this.requestProcessing = false
-                    this.message = response.errorMessage
-
-                })
-                */
             }
         }
     }
