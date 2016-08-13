@@ -1,0 +1,60 @@
+<div class="container">
+
+  <header>
+    BROCCOLI & CO.
+  </header>
+
+  <section class="main" >
+    <h1>A better way to enjoy every day</h1>
+    <h6>Be the first to know when we launch.</h6>
+    <button ng-click="ctrl.onClickRequest()">Request an Invite</button>
+
+    <div class = "modal" ng-if="ctrl.showRequestModal">
+      <div class = "modal-inner">
+
+        <div class = "modal-header">
+          <div class="modal-header-element modal-title"><i>Request an Invite</i></div>
+          <div class="divider"> </div>
+          <div class = "modal-header-element close-btn"><i class="fa fa-times" ng-click="ctrl.onClickCloseRequestModal()"></i></div>
+        </div>
+
+        <div ng-if="!ctrl.requestProcessing">
+          <form name = "ctrl.requestForm" novalidate>
+            <input type = "text" ng-model="ctrl.user.name" name ="userName" pattern=".{3,}" required placeholder="Full name"><br>
+            <input type = "email" ng-model="ctrl.user.email" name="userEmail" required placeholder="Email"><br>
+            <input type = "email" ng-model="ctrl.user.emailConf" name="userEmailConf" required placeholder="Confirm email"><br>
+            <button class="btn-submit" ng-click="ctrl.onClickSend()" >Send</button><br>
+          </form>
+          <div class="message" ng-if="ctrl.message.length > 0"><i>{{ctrl.message}}</i></div>
+        </div>
+
+        <div ng-if="ctrl.requestProcessing">
+          Just a moment...
+          <i class="fa fa-spinner"></i>
+        </div>
+
+      </div>
+    </div>
+
+    <div class = "modal" ng-if="ctrl.showSuccessModal">
+      <div class = "modal-inner">
+        <div class = "modal-header">
+          <div class="modal-header-element modal-title"><i>All done!</i></div>
+          <div class="divider"> </div>
+          <div class = "modal-header-element close-btn"><i class="fa fa-times" ng-click="ctrl.onClickCloseSuccessModal()"></i></div>
+        </div>
+        <p>You will be one of the first to experience Broccoli & Co. when we launch.</p>
+        <button class="btn-submit" ng-click="ctrl.onClickCloseSuccessModal()" >OK</button>
+      </div>
+    </div>
+
+  </section>
+
+
+
+  <footer>
+    <i>Made with <i class="fa fa-heart"></i> in Melbourne.<br>
+    &copy; 2016 Broccoli & Co. All rights reserved.</i>
+  </footer>
+
+</div>
