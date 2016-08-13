@@ -19,6 +19,7 @@ header {
   border-bottom: 1px solid #ccc;
   padding-top: .9em;
   padding-left: 3em;
+  background-color: #c9eef5;
 }
 
 footer {
@@ -32,6 +33,7 @@ footer {
   padding-bottom: 1em;
   font-size: .7em;
   text-align: center;
+  background-color: #c9eef5;
 }
 section.main {
   margin: 6em 1em;
@@ -43,7 +45,7 @@ section.main {
   @include shadow();
   @include modalMiddleLeftHeader()
   text-align: center;
-  background-color: #fff;
+  background-color: #c9eef5;
   opacity: 1;
   position: absolute;
   top: 18%;
