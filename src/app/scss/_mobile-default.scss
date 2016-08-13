@@ -94,6 +94,7 @@ input {
   margin-top:.3em;
 }
 button {
+  @include shadow();
   border-radius: .2em;
   background-color: #fff;
   border: 1px solid #000;
