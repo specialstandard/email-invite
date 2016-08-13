@@ -1,6 +1,10 @@
 # email-invite
 Email Invitation Request Web App
 
+Live Demo:
+
+http://www.cloudkicker.tech/email-invite
+
 Installation:
 
 1. npm Install
