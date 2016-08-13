@@ -1,12 +1,12 @@
 
 describe('invite directive test', () => {
 
-  var $scope
+  let $scope
   beforeEach( () => {
     module("app");
     inject( ( $rootScope, $compile ) => {
       $scope = $rootScope.$new()
-      var element = angular.element("<invite-directive></invite-directive>")
+      const element = angular.element("<invite-directive></invite-directive>")
       template = $compile(element)($scope)
       is = element.isolateScope();
       $scope.$digest()
