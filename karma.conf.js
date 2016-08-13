@@ -12,15 +12,15 @@ module.exports = function(config) {
       'node_modules/angular/angular.js',
       //'node_modules/angular-route/angular-route.js',
       'node_modules/angular-mocks/angular-mocks.js',
-      //'build/bundle.js',
+      'build/bundle.js',
 
-      'src/app/app.js',
+      //'src/app/app.js',
       //'src/app/invite-component/invite-directive/invite-directive.js',
-      'src/app/**/*.js',
+      //'src/app/**/*.js',
       //'src/app/invite-component/invite.js',
 
 
-      //'src/app/invite-component/invite-directive/invite-directive.spec.js'
+      'src/app/invite-component/invite-directive/invite-directive.spec.js'
     ],
 
     autoWatch: true,
