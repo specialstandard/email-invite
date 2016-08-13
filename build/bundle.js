@@ -56,6 +56,7 @@
 
 	var _inviteComponentInviteJs2 = _interopRequireDefault(_inviteComponentInviteJs);
 
+	//require('./invite-component/invite.js')
 	__webpack_require__(8);
 	_angular2['default'].module('app', ['invite']);
 
