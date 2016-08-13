@@ -47,7 +47,7 @@ section.main {
   opacity: 1;
   position: absolute;
   top: 18%;
-  height: 12em;
+  height: 13em;
   width: 13em;
   z-index: 10;
   border: 1px solid #444;
@@ -79,7 +79,7 @@ section.main {
 }
 .message {
   font-size: .6em;
-  margin-top: .2em;
+  margin-top: .8em;
   color: #7d1e2f;
 }
 input {
@@ -113,4 +113,15 @@ button {
   width: 1.5em;
   height: 1em;
   border-bottom: 1px solid #222;
+}
+
+.dark-background{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  opacity: .8;
+  background-color: #ccc;
 }
