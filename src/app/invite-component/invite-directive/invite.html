@@ -1,13 +1,13 @@
 <div class="container">
 
   <header>
-    BROCCOLI & CO.
+    <i class="fa fa-cutlery"></i> BROCCOLI & CO.
   </header>
 
   <section class="main" >
     <h1>A better way to enjoy every day</h1>
     <h6>Be the first to know when we launch.</h6>
-    <button ng-click="ctrl.onClickRequest()">Request an Invite</button>
+    <button ng-click="ctrl.onClickRequest()"><i class="fa fa-question-circle"></i> Request an Invite</button>
 
     <div class = "modal" ng-if="ctrl.showRequestModal">
       <div class = "modal-inner">
@@ -23,7 +23,7 @@
             <input type = "text" ng-model="ctrl.user.name" name ="userName" pattern=".{3,}" required placeholder="Full name"><br>
             <input type = "email" ng-model="ctrl.user.email" name="userEmail" required placeholder="Email"><br>
             <input type = "email" ng-model="ctrl.user.emailConf" name="userEmailConf" required placeholder="Confirm email"><br>
-            <button class="btn-submit" ng-click="ctrl.onClickSend()" >Send</button><br>
+            <button class="btn-submit" ng-click="ctrl.onClickSend()" ><i class="fa fa-paper-plane"></i> Send</button><br>
           </form>
           <div class="message" ng-if="ctrl.message.length > 0"><i>{{ctrl.message}}</i></div>
         </div>
